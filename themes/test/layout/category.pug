@@ -1,0 +1,13 @@
+extends _parts/layout.pug
+
+block title
+  title= page.category
+
+block contents
+  include _parts/nav.pug
+  - var posts = new Array()
+  - page.posts.each(function(item){posts.push(item);})
+  ul
+    each item in posts
+      li
+        a(href=url_for(item.path))= item.title

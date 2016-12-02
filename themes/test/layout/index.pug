@@ -1,0 +1,11 @@
+extends _parts/layout.pug
+
+block title
+  title= config.title
+
+block contents
+  include _parts/nav.pug
+  p !{page.content}
+
+block style
+  != css('css/index')

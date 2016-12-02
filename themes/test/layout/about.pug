@@ -1,0 +1,12 @@
+extends _parts/layout.pug
+
+block title
+  title= config.title
+
+block contents
+  include _parts/nav.pug
+  div(class='panel panel-default')
+    .panel-body
+      != page.content
+
+block style

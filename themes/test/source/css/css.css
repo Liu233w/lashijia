@@ -1,0 +1,134 @@
+﻿body,
+div,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: small "宋体";
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 1000px;
+    text-align: left;
+    margin: auto;
+    /* border: 1px solid #666666; */
+}
+
+.header {
+    /* float: center; */
+    /* background: url(./images/bg_header.jpg) no-repeat left top; */
+    height: 200px;
+    /* width: 700px; */
+    margin: 10px auto;
+}
+
+.header p {
+    display: none;
+}
+
+.inner {
+    width: 740px;
+    margin: auto;
+    clear: both;
+}
+
+.nav {
+    width: 1000px;
+    height: 35px;
+    background: DarkSeaGreen;
+    margin: 0 auto;
+    /*水平居中*/
+    margin-top: 30px;
+    /*顶部 30px*/
+}
+
+.nav ul {
+    width: 740px;
+    height: 35px;
+}
+
+.nav ul li {
+    height: 35px;
+    float: left;
+    list-style: none;
+    line-height: 35px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 35px;
+    color: #333;
+    text-decoration: none;
+    float: left;
+    padding: 0 10px;
+}
+
+.nav ul li a:hover {
+    /* color: #fff; */
+    /* text-decoration: underline; */
+    background: AntiqueWhite;
+}
+
+.nav ul li a:active {
+    background: AntiqueWhite;
+    border: solid 1.5px green;
+}
+
+.left-pad {
+    float: left;
+    /* clear: both; */
+    padding: 15px;
+    line-height: 1.5em;
+    text-indent: 2em;
+    margin: auto;
+    width: 340px;
+    clear: none;
+}
+
+.right-pad {
+    float: left;
+    /* clear: both; */
+    padding: 15px;
+    line-height: 1.5em;
+    text-indent: 2em;
+    margin: auto;
+    margin-left: 15px;
+    width: 320px;
+    clear: none;
+}
+
+img {
+    float: right;
+    margin-left: 15px;
+}
+
+.prose {
+    color: #3587B9;
+    padding-left: 80px;
+    padding-top: 10px;
+    text-indent: 0em;
+}
+
+.footer {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    /* margin: 1px auto; */
+    /* position: absolute; */
+    bottom: 0;
+    clear: both;
+}
+
+.return {}
+
+.posts-title-list {
+    font: medium 微软雅黑;
+}

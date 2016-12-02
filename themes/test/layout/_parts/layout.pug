@@ -1,0 +1,15 @@
+doctype html
+
+html
+  head
+    block title
+    meta(charset='utf-8')
+    // link(rel='stylesheet', href= '/public/css/css.css', type='text/css')
+    // != css('css/css')
+    != css("css/bootstrap.min.css")
+    != js('js/jquery-3.1.1.min.js')
+    != js('js/bootstrap.min.js')
+    block style
+  body
+    .container
+      block contents

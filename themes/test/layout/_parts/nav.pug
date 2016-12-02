@@ -1,0 +1,14 @@
+.header
+  h1= config.title
+- var categories = new Array()
+- site.categories.each(function(item){categories.push(item);})
+div(class='navbar navbar-default' role='navigation')
+  .container-fluid
+    .navbar-header
+      a(class="navbar-brand" href='/') 主页
+    ul(class='nav navbar-nav')
+      each item in categories
+        li
+          a(href=url_for(item.path))= item.name
+      li
+        a(href='/about') 关于我们

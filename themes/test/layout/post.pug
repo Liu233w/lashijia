@@ -1,0 +1,13 @@
+extends _parts/layout.pug
+
+block title
+  title= page.title
+
+block contents
+  .header
+    h1= page.title
+  .container
+    .inner
+      p !{page.content}
+    .return
+      a(href='/') 返回主页
