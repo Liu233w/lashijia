@@ -10,10 +10,37 @@ block contents
       small= config.subtitle
   include _parts/nav.pug
   - var index_page
-  - function find_index_page (item) {if (item.layout == 'index') index_page = item;}
-  - site.pages.forEach(find_index_page)
-  if index_page
-    != index_page.content
+  - var footer_page
+  -
+    function find_page (item) {
+        if (item.layout == 'index')
+          index_page = item;
+        else if (item.layout == 'footer')
+          footer_page = item;
+    }
+  - site.pages.forEach(find_page)
+  .row
+    .col-md-4
+      div(class='panel panel-default')
+        .panel-heading
+          h3(class='panel-title')= config.title
+        .panel-body!= index_page.content
+        .panel-body!= footer_page.content
+
+    .col-md-8
+      h3 最新发布
+
+      - var posts = new Array()
+      - page.posts.forEach(function(item) {posts.push(item);})
+      each item in posts
+        div(class='panel panel-default')
+          .panel-heading
+            h3(class='panel-title')= item.title
+          // 如果post有摘要的话就只显示摘要
+          if(item.excerpt!='')
+            .panel-body!= item.excerpt
+          else
+            .panel-body!= item.more
 
 block style
   != css('css/index')
