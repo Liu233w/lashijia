@@ -5,9 +5,15 @@ block title
 
 block contents
   .header
-    h1= config.title
+    h1
+      = config.title
+      small= config.subtitle
   include _parts/nav.pug
-  p !{page.content}
+  - var index_page
+  - function find_index_page (item) {if (item.layout == 'index') index_page = item;}
+  - site.pages.forEach(find_index_page)
+  if index_page
+    != index_page.content
 
 block style
   != css('css/index')
