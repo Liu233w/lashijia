@@ -4,20 +4,22 @@ block title
   title= page.title
 
 block contents
+  - var categories = new Array()
+  - site.categories.each(function(item){categories.push(item);})
   .header
     h1= page.title
-  div(class="row")
-    div(class="col-md-3")
-        ul(class="nav nav-pills nav-stacked")
-          li(class="active")
-            a(href='/') 主页
-            a(href='#') 1
-            a(href='#') 2
-            a(href='#') 3
-        img(src="/img/11.jpg" class="img-responsive" alt="Cinque Terre")
-    div(class="col-md-9")
-      div(class="panel panel-default")
-        div(class="panel-body")
+  .row
+    .col-md-3
+      .row
+        button.btn.btn-danger.btn-lg.btn-block(onClick="window.location.href='/'") 主页
+        each item in categories
+          - var link_path = "window.location.href='" + url_for(item.path) + "'"
+          button.btn.btn-danger.btn-lg.btn-block(onClick=link_path)= item.name
+      .row(style="margin-top: 5px")
+        img(src="/img/lajiao.PNG" class="img-responsive img-rounded" alt="Cinque Terre")
+    .col-md-9
+      .panel.panel-default
+        .panel-body
           != page.content
 
 block style
