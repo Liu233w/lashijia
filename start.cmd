@@ -1,1 +1,1 @@
-hexo server
+npm install && hexo server
