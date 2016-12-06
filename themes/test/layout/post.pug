@@ -11,12 +11,14 @@ block contents
   .row
     .col-md-3
       .row
-        button.btn.btn-danger.btn-lg.btn-block(onClick="window.location.href='/'") 主页
+        button.btn.btn-danger.btn-lg.btn-block(
+          onClick="window.location.href='/'") 主页
         each item in categories
           - var link_path = "window.location.href='" + url_for(item.path) + "'"
           button.btn.btn-danger.btn-lg.btn-block(onClick=link_path)= item.name
       .row(style="margin-top: 5px")
-        img(src="/img/lajiao.PNG" class="img-responsive img-rounded" alt="Cinque Terre")
+        img(src="/img/lajiao.PNG" class="img-responsive img-rounded"
+          alt="Cinque Terre")
     .col-md-9
       .panel.panel-default
         .panel-body

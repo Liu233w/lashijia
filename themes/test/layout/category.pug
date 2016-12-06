@@ -14,7 +14,7 @@ block contents
 
   - var posts = new Array()
   - page.posts.each(function(item){posts.push(item);})
-  div(class='panel panel-default')
+  .panel.panel-default
     each item in posts
       .panel-heading(style="text-align:center")
         .panel-title
@@ -24,4 +24,5 @@ block contents
           p!= item.content
         else
           p!= item.excerpt
-          button.btn.btn-success(onClick="window.open('" + url_for(item.path) + "')") 更多
+          button.btn.btn-success(
+            onClick="window.open('" + url_for(item.path) + "')") 更多

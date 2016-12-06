@@ -21,9 +21,9 @@ block contents
   - site.pages.forEach(find_page)
   .row
     .col-md-4
-      div(class='panel panel-default')
+      .panel.panel-default
         .panel-heading
-          h3(class='panel-title')= config.title
+          h3.panel-title= config.title
         .panel-body!= index_page.content
         .panel-body!= footer_page.content
 
@@ -33,9 +33,9 @@ block contents
       - var posts = new Array()
       - page.posts.forEach(function(item) {posts.push(item);})
       each item in posts
-        div(class='panel panel-default')
+        panel.panel-default
           .panel-heading
-            h3(class='panel-title')= item.title
+            h3.panel-title= item.title
           // 如果post有摘要的话就只显示摘要
           if(item.excerpt!='')
             .panel-body!= item.excerpt
