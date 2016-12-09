@@ -7,22 +7,28 @@ block title
   title= page.category
 
 block contents
+  .container
+    h1= page.category
 
-  h1(style="text-align:center")= page.category
+    include _parts/nav.pug
+    - var posts = new Array()
+    - page.posts.each(function(item){posts.push(item);})
 
-  include _parts/nav.pug
+    .tab-pane.active(role="tabpanel")
+      .row.masonry-container
+        each item in posts
+          .col-md-4.col-sm-6.item
+            .panel.panel-default
+              button.btn.btn-danger.btn-lg.btn-block(
+                onClick="window.open('" + url_for(item.path) + "')"
+              )= item.title
+              .panel-body
+                if(item.excerpt=='')
+                  p!= item.content
+                else
+                  p!= item.excerpt
+                  .yun122-more
+                    a(href= url_for(item.path)) 更多
 
-  - var posts = new Array()
-  - page.posts.each(function(item){posts.push(item);})
-  .panel.panel-default
-    each item in posts
-      .panel-heading(style="text-align:center")
-        .panel-title
-          a(href=url_for(item.path))= item.title
-      .panel-body
-        if(item.excerpt=='')
-          p!= item.content
-        else
-          p!= item.excerpt
-          button.btn.btn-success(
-            onClick="window.open('" + url_for(item.path) + "')") 更多
+    != js('js/masonry.pkgd.min.js')
+    != js('js/category')

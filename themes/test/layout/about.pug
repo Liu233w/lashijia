@@ -4,11 +4,12 @@ block title
   title= config.title
 
 block contents
-  h1 关于我们
-  include _parts/nav.pug
-  div(class='panel panel-default')
-    .panel-body
-      != page.content
+  .container
+    h1 关于我们
+    include _parts/nav.pug
+    div(class='panel panel-default')
+      .panel-body
+        != page.content
 
 block style
   != css('css/index')

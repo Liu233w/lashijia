@@ -1,0 +1,22 @@
+body {
+  padding-top: 50px;
+}
+
+.main-container {
+  padding: 40px 15px;
+  margin: auto;
+}
+
+.p {
+  text-align: center;
+}
+
+.panel-body > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.yun122-more {
+    text-align: right;
+}
