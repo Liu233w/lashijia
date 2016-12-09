@@ -7,13 +7,13 @@ block contents
   .container-fluid
     div(id="myCarousel" class="carousel slide yun122-pad")
       //- 轮播（Carousel）指标
-      ol(class="carousel-indicators")
+      ol(class="carousel-indicators yun122-point")
         li(data-target="#myCarousel" data-slide-to="0"
             class="active")
         li(data-target="#myCarousel" data-slide-to="1")
       //- 轮播（Carousel）项目
       div(class="carousel-inner" )
-          div(class="item active")
+          div(class="item active yun122-title")
             div(class="jumbotron yun122-jumbotron")
               div(class="container-fluid")
                 .header.jumbotron.yun122-jumbotron-2
@@ -26,19 +26,23 @@ block contents
           div(class="item")
             div(class="jumbotron yun122-jumbotron" )
               div(class="container-fluid")
-                .col-md-8
-                  h3 最新发布
-                  - var posts = new Array()
-                  - page.posts.forEach(function(item) {posts.push(item);})
-                  each item in posts
-                    panel.panel-default
+                h3 最新发布
+                .row
+                - var posts = new Array()
+                - page.posts.forEach(function(item) {posts.push(item);})
+                each item in posts
+                  .col-md-4
+                    .panel.panel-default
                       .panel-heading
-                        h3.panel-title= item.title
+                        h3.panel-title
+                          a(href= url_for(item.path))
+                            = item.title
                       //- 如果post有摘要的话就只显示摘要
-                      if(item.excerpt=='')
-                        .panel-body!= item.contents
-                      else
-                        .panel-body!= item.excerpt
+                      .panel-body
+                        if(item.excerpt=='')
+                          .panel-body!= item.contents
+                        else
+                          .panel-body!= item.excerpt
 
     //- 轮播（Carousel）导航
     a(class="carousel-control left icon-prev" href="#myCarousel"

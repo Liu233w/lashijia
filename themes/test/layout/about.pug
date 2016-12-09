@@ -4,12 +4,13 @@ block title
   title= config.title
 
 block contents
-  .container
-    h1 关于我们
-    include _parts/nav.pug
-    div(class='panel panel-default')
-      .panel-body
-        != page.content
+  .container.jumbotron.yun122-jumbotron-2.img-rounded
+    div(class="container")
+      h1 关于我们
+      include _parts/nav.pug
+      div(class='panel panel-default')
+        .panel-body.yun122-panel.img-rounded
+          != page.content
 
 block style
   != css('css/index')

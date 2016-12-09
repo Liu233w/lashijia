@@ -10,9 +10,13 @@ body{
     height:50px;
 }
 .yun122-pad{
-    padding: 10% 0;
     size: 100%;
 }
+
+.yun122-title{
+    padding: 10% 0;
+}
+
 .yun122-jumbotron-2{
     background-color:rgba(255,255, 255, 0.8);
 }
@@ -27,4 +31,18 @@ body{
     /* top: 50%; */
     /* opacity: 1; */
     font-size: 30px;
+}
+
+.panel-body > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.yun122-point {
+    position: fixed;
+    bottom: 0;
+}
+.yun122-panel {
+    background-color: cornsilk;
 }
