@@ -2,15 +2,29 @@ body{
     background:url(../img/background.jpg) no-repeat;
     background-size: 100%;
     padding: 5% 0;
+    height: 100%;
 }
+
 .yun122-jumbotron{
     background-color:transparent;
     height:50px;
 }
 .yun122-pad{
     padding: 10% 0;
-    size: 100%; 
+    size: 100%;
 }
 .yun122-jumbotron-2{
     background-color:rgba(255,255, 255, 0.8);
+}
+
+.carousel-control {
+    width: 5%;
+}
+
+.carousel-control,
+.carousel-control:hover,
+.carousel-control:focus {
+    /* top: 50%; */
+    /* opacity: 1; */
+    font-size: 30px;
 }

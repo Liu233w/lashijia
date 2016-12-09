@@ -4,48 +4,46 @@ block title
   title= config.title
 
 block contents
-  div(id="myCarousel" class="carousel slide  yun122-pad")
-      //- 轮播（Carousel）指标 
-      ol(class="carousel-indicators")
-          li(data-target="#myCarousel" data-slide-to="0" 
-              class="active")
-          li(data-target="#myCarousel" data-slide-to="1")
-      //- 轮播（Carousel）项目
-      div(class="carousel-inner" )
-          div(class="item active")
-            div(class="jumbotron yun122-jumbotron")
-              div(class="container-fluid")
-                .header.jumbotron.yun122-jumbotron-2
-                  div(class="container")
-                    h1
-                      = config.title
-                      small= config.subtitle
-              include _parts/nav.pug
-              .panel-body!= item.more
+  div(id="myCarousel" class="carousel slide yun122-pad")
+    //- 轮播（Carousel）指标
+    ol(class="carousel-indicators")
+      li(data-target="#myCarousel" data-slide-to="0"
+          class="active")
+      li(data-target="#myCarousel" data-slide-to="1")
+    //- 轮播（Carousel）项目
+    div(class="carousel-inner" )
+        div(class="item active")
+          div(class="jumbotron yun122-jumbotron")
+            div(class="container-fluid")
+              .header.jumbotron.yun122-jumbotron-2
+                div(class="container")
+                  h1
+                    = config.title
+                    small= config.subtitle
+            include _parts/nav.pug
 
-          
-          div(class="item")
-            div(class="jumbotron yun122-jumbotron" )
-              div(class="container-fluid")
-                .col-md-8
-                  h3 最新发布
-                  - var posts = new Array()
-                  - page.posts.forEach(function(item) {posts.push(item);})
-                  each item in posts
-                    panel.panel-default
-                      .panel-heading
-                        h3.panel-title= item.title
-                      //- 如果post有摘要的话就只显示摘要
-                      if(item.excerpt=='')
-                        .panel-body!= item.contents
-                      else
-                        .panel-body!= item.excerpt
+        div(class="item")
+          div(class="jumbotron yun122-jumbotron" )
+            div(class="container-fluid")
+              .col-md-8
+                h3 最新发布
+                - var posts = new Array()
+                - page.posts.forEach(function(item) {posts.push(item);})
+                each item in posts
+                  panel.panel-default
+                    .panel-heading
+                      h3.panel-title= item.title
+                    //- 如果post有摘要的话就只显示摘要
+                    if(item.excerpt=='')
+                      .panel-body!= item.contents
+                    else
+                      .panel-body!= item.excerpt
 
-      //- 轮播（Carousel）导航
-      a(class="carousel-control left" href="#myCarousel" 
-          data-slide="prev") <
-      a(class="carousel-control right" href="#myCarousel" 
-          data-slide="next") >
+  //- 轮播（Carousel）导航
+  a(class="carousel-control left icon-prev" href="#myCarousel"
+      data-slide="prev") <
+  a(class="carousel-control right icon-next" href="#myCarousel"
+      data-slide="next") >
 
 block style
   != css('css/index')
