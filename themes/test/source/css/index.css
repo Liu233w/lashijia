@@ -1,0 +1,16 @@
+body{
+    background:url(../img/background.jpg) no-repeat;
+    background-size: 100%;
+    padding: 5% 0;
+}
+.yun122-jumbotron{
+    background-color:transparent;
+    height:50px;
+}
+.yun122-pad{
+    padding: 10% 0;
+    size: 100%; 
+}
+.yun122-jumbotron-2{
+    background-color:rgba(255,255, 255, 0.8);
+}
