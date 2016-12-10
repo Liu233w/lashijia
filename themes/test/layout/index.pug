@@ -30,19 +30,20 @@ block contents
                 .row
                 - var posts = new Array()
                 - page.posts.forEach(function(item) {posts.push(item);})
-                each item in posts
+                - var total = Math.min(posts.length, 3)
+                - for(var i = 0; i < total; ++i)
                   .col-md-4
                     .panel.panel-default
                       .panel-heading
                         h3.panel-title
                           a(href= url_for(item.path))
-                            = item.title
+                            = posts[i].title
                       //- 如果post有摘要的话就只显示摘要
                       .panel-body
                         if(item.excerpt=='')
-                          .panel-body!= item.contents
+                          .panel-body!= posts[i].contents
                         else
-                          .panel-body!= item.excerpt
+                          .panel-body!= posts[i].excerpt
 
     //- 轮播（Carousel）导航
     a(class="carousel-control left icon-prev" href="#myCarousel"
