@@ -4,7 +4,7 @@
 
 Copyright (c) 2016 刘书敏 梁煜 李元申 李兴庆 
 
-保留所有权利
+LICENSE: MIT
 
 ## 使用方式：
 安装 node，然后使用 `npm install` 安装插件，使用 `hexo server` 来运行后端。
