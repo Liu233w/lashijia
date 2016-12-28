@@ -1,9 +1,7 @@
----
 title: 关于我们
 layout: about
 date: 2016-12-02 16:07:30
 ---
-
 ### 辣世家
 一个专门介绍各种辣条和辣酱的网站
 
@@ -14,3 +12,5 @@ date: 2016-12-02 16:07:30
 - 梁煜
 - 李元申
 - 李兴庆
+
+Github 项目地址： https://github.com/Liu233w/lashijia
